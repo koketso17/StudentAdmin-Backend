@@ -18,6 +18,8 @@ app.use(function (req, res, next) {
 // api routes
 
 app.use('/', require('./routes/studentData'));
+app.use('/', require('./routes/viewData'));
+app.use('/', require('./routes/deleteData'));
 
 // start server
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 5000;
