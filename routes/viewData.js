@@ -5,11 +5,11 @@ const db = require('../conn/conn');
 
 //get student profile
 
-router.get('/viewData', function (req, res) {
+router.get('/view', function (req, res) {
 
     const idNo = req.body.idNo;
 
-    var myQuery = "SELECT * FROM studentInfo ";
+    var myQuery = "SELECT * FROM studentInfo  WHERE idNo=?";
 
 
     db.query(myQuery, [idNo], function (err, results) {

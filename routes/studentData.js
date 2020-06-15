@@ -5,15 +5,13 @@ const db = require('../conn/conn');
 
 //register student 
 
-router.post('/studentData', function (req, res) {
+router.post('/add', function (req, res) {
     var post = {
-
 
         "name": req.body.name,
         "email": req.body.email,
         "idNo": req.body.idNo,
         "modules": req.body.modules
-
 
     };
 

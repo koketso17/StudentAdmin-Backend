@@ -5,30 +5,15 @@ const db = require('../conn/conn');
 
 //delete student profile
 
-router.delete('/deleteData', function (req, res) {
+router.delete('/delete/:id', function (req, res) {
 
-    const idNo = req.body.idNo;
-
-    //var myQuery = "DELETE * FROM studentInfo";
-
-
-    //db.query(myQuery, [idNo], function (err, results) {
-        db.query('DELETE * FROM studentInfo WHERE idNo=?', [req.params.idNo], (err, rows, fields) => {
-        if (err) {
-
-            res.send({
-                code: 400,
-                message: err
-            })
-        } else {
-
-
-            res.send({
-                code: 200,
-                message: "DELETED Successfully!"
-
-            })
-        }
+    var sQL = 'DELETE FROM studentInfo WHERE id= ?';
+    
+    db.query(sQL, [req.params.id], (err, rows, fields) => {
+        if (!err)
+            res.send('Deleted successfully');
+        else
+            console.log(err);
     })
 });
 

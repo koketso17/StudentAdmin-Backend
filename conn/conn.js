@@ -6,7 +6,7 @@ const mysqlConn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'schoolAdmin',
+    database: 'schoolAdministration',
     multipleStatements: true
 
 })
